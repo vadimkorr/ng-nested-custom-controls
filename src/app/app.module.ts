@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { ClarityModule } from '@clr/angular';
 
 import { AppComponent } from './app.component';
+import { ExampleNgmodelModule } from './example-ngmodel/example-ngmodel.module';
+import { ExampleReactiveFormsModule } from './example-reactive-forms/example-reactive-forms.module';
 
 
 @NgModule({
@@ -12,7 +14,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    ClarityModule
+    ClarityModule,
+    ExampleNgmodelModule,
+    ExampleReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

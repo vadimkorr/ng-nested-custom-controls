@@ -19,8 +19,8 @@ export class InputComponent implements ControlValueAccessor {
 
   @ViewChild('inputControl') private _inputControl: ElementRef;
 
-  private _onChange = (_: any) => void;
-  private _onTouched = () => void;
+  private _onChange = (_: any) => {};
+  private _onTouched = () => {};
 
   writeValue(obj: any): void {
     this.value = obj;
