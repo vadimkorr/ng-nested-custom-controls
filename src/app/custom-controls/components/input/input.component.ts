@@ -1,0 +1,37 @@
+import { Component, OnInit, Input, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
+
+@Component({
+  selector: 'custom-input',
+  templateUrl: './input.component.html',
+  styleUrls: ['./input.component.css']
+})
+export class InputComponent implements ControlValueAccessor {
+
+  constructor(
+    private _renderer: Renderer2
+  ) { }
+
+  value: string = '';
+  @Input() type: string;
+  @Input() id: string;
+  @Input() placeholder: string;
+
+  @ViewChild('inputControl') private _inputControl: ElementRef;
+
+  private _onChange = (_: any) => void;
+  private _onTouched = () => void;
+
+  writeValue(obj: any): void {
+    this.value = obj;
+  }
+  registerOnChange(fn: any): void {
+    this._onChange = fn;
+  }
+  registerOnTouched(fn: any): void {
+    this._onTouched = fn;
+  }
+  setDisabledState?(isDisabled: boolean): void {
+    this._renderer.setProperty(this._inputControl.nativeElement, 'disabled', isDisabled);
+  }
+}
