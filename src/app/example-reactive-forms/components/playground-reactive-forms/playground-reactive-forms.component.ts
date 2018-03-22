@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'custom-playground-reactive-forms',
   templateUrl: './playground-reactive-forms.component.html',
   styleUrls: ['./playground-reactive-forms.component.css']
 })
-export class PlaygroundReactiveFormsComponent implements OnInit {
+export class PlaygroundReactiveFormsComponent {
 
-  constructor() { }
+  constructor(
+    private _fb: FormBuilder
+  ) { }
 
-  ngOnInit() {
+  userName: string;
+
+  userForm = this._fb.group({
+    userName: [this.userName, Validators.compose([Validators.minLength(2), Validators.required])]
+  });
+
+  submit() {
+    alert('submitted!');
   }
 
 }

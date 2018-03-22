@@ -1,3 +1,15 @@
-<p>
-  playground-reactive-forms works!
-</p>
+
+
+
+<form [formGroup]="userForm" (ngSubmit)="submit($event)">
+
+    <custom-input
+      formControlName="userName"
+      [type]="'text'"
+      [id]="'id1'"
+      [placeholder]="'type something'"></custom-input>
+
+    <button type="submit" class="btn btn-primary"
+      [disabled]="!userForm.valid">Submit</button>
+
+</form>
