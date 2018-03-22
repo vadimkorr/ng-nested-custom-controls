@@ -5,14 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './playground-ngmodel.component.html',
   styleUrls: ['./playground-ngmodel.component.css']
 })
-export class PlaygroundNgmodelComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class PlaygroundNgmodelComponent {
 
   name: string = '';
-  name2: string = '';
+  lastName: string = '';
 
 }

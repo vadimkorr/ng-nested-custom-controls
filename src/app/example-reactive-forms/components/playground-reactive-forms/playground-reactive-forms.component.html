@@ -1,25 +1,26 @@
-
-
+<h2>Reactive Forms</h2>
 
 <form [formGroup]="userForm" (ngSubmit)="submit($event)">
+  <h3>custom-input</h3>
+  <custom-input
+    formControlName="userName"
+    [type]="'text'"
+    [id]="'id1'"
+    [placeholder]="'type something'"
+    [showValidationResult]="true"></custom-input>
 
-    <custom-input
-      formControlName="userName"
-      [type]="'text'"
-      [id]="'id1'"
-      [placeholder]="'type something'"
-      [showValidationResult]="true"></custom-input>
+  <h3>custom-labeled-input</h3>
+  <custom-labeled-input
+    formControlName="lastName"
+    [type]="'text'"
+    [id]="'id2'"
+    [placeholder]="'type something'"
 
-    <custom-labeled-input
-      formControlName="lastName"
-      [type]="'text'"
-      [id]="'id2'"
-      [placeholder]="'type something'"
+    [label]="'Name'"
+    [isRequired]="true"></custom-labeled-input>
 
-      [label]="'Name'"
-      [isRequired]="true"></custom-labeled-input>
-
-    <button type="submit" class="btn btn-primary"
-      [disabled]="!userForm.valid">Submit</button>
+  <button type="submit" class="btn btn-primary"
+    [disabled]="!userForm.valid">Submit</button>
 
 </form>
+

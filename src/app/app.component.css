@@ -1,10 +1,30 @@
 
 :host {
   display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
 }
 
-.host > * {
+:host > * {
+  display: flex;
+}
+
+.playground > * {
+  flex: 2;
+  flex-direction: row;
+}
+
+.original-controls-container {
   flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: lightsteelblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.original-controls-container > * {
+
 }

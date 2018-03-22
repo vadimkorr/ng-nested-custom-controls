@@ -1,26 +1,25 @@
+<h2>ngModel</h2>
+
 <div class="form">
-<custom-input
-  [(ngModel)]="name"
-  required
-  [type]="'text'"
-  [id]="'id1'"
-  [placeholder]="'type something'"
-  [showValidationResult]="false"></custom-input>
+  <h3>custom-input</h3>
+  <custom-input
+    [(ngModel)]="name"
+    required
+    [type]="'text'"
+    [id]="'ngmodel-name'"
+    [placeholder]="'Enter Name'"
+    [showValidationResult]="false"></custom-input>
+  Name: {{name}}
 
-name: {{name}}
-
-<custom-labeled-input
-  [(ngModel)]="name2"
-  required
-  [type]="'text'"
-  [id]="'id2'"
-  [placeholder]="'type something'"
-
-  [label]="'Name'"
-  [isRequired]="true"
-></custom-labeled-input>
-
-{{name2}}
-
+  <h3>custom-labeled-input</h3>
+  <custom-labeled-input
+    [(ngModel)]="lastName"
+    required
+    [type]="'text'"
+    [id]="'ngmodel-lastname'"
+    [placeholder]="'Enter Last Name'"
+    [label]="'Name'"
+    [isRequired]="true"></custom-labeled-input>
+  Last Name: {{lastName}}
 </div>
 
