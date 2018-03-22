@@ -13,9 +13,11 @@ export class PlaygroundReactiveFormsComponent {
   ) { }
 
   userName: string;
+  lastName: string;
 
   userForm = this._fb.group({
-    userName: [this.userName, Validators.compose([Validators.minLength(2), Validators.required])]
+    userName: [this.userName, Validators.compose([Validators.minLength(2), Validators.required])],
+    lastName: [this.lastName, Validators.compose([Validators.minLength(2), Validators.required])]
   });
 
   submit() {

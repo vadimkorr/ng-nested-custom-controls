@@ -10,6 +10,15 @@
       [placeholder]="'type something'"
       [showValidationResult]="true"></custom-input>
 
+    <custom-labeled-input
+      formControlName="lastName"
+      [type]="'text'"
+      [id]="'id2'"
+      [placeholder]="'type something'"
+
+      [label]="'Name'"
+      [isRequired]="true"></custom-labeled-input>
+
     <button type="submit" class="btn btn-primary"
       [disabled]="!userForm.valid">Submit</button>
 

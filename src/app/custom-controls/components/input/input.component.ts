@@ -34,7 +34,9 @@ export class InputComponent implements ControlValueAccessor {
   @Input() showValidationResult: boolean = false;
 
   @ViewChild('inputControl') private _inputControl: ElementRef;
-
+  getInputControl(): ElementRef {
+    return this._inputControl;
+  }
   private _onChange = (_: any) => {};
   private _onTouched = () => {};
 

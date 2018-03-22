@@ -1,9 +1,26 @@
-
+<div class="form">
 <custom-input
   [(ngModel)]="name"
+  required
   [type]="'text'"
   [id]="'id1'"
   [placeholder]="'type something'"
-  [showValidationResult]="true"></custom-input>
+  [showValidationResult]="false"></custom-input>
 
 name: {{name}}
+
+<custom-labeled-input
+  [(ngModel)]="name2"
+  required
+  [type]="'text'"
+  [id]="'id2'"
+  [placeholder]="'type something'"
+
+  [label]="'Name'"
+  [isRequired]="true"
+></custom-labeled-input>
+
+{{name2}}
+
+</div>
+
