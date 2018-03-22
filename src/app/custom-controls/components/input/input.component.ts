@@ -1,10 +1,25 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, Renderer2 } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+import {
+  Component,
+  Input,
+  ViewChild,
+  ElementRef,
+  Renderer2,
+  forwardRef
+} from '@angular/core';
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR
+} from '@angular/forms';
 
 @Component({
   selector: 'custom-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  styleUrls: ['./input.component.css'],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => InputComponent),
+    multi: true,
+  }]
 })
 export class InputComponent implements ControlValueAccessor {
 
@@ -33,5 +48,15 @@ export class InputComponent implements ControlValueAccessor {
   }
   setDisabledState?(isDisabled: boolean): void {
     this._renderer.setProperty(this._inputControl.nativeElement, 'disabled', isDisabled);
+  }
+
+  onChange(event: any) {
+    this._onChange(event.target.value);
+  }
+  onKeyup(event: any) {
+    this._onChange(event.target.value);
+  }
+  onBlur(event: any) {
+    this._onTouched();
   }
 }

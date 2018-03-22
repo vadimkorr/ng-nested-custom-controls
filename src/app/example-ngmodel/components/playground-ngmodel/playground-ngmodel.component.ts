@@ -12,4 +12,6 @@ export class PlaygroundNgmodelComponent implements OnInit {
   ngOnInit() {
   }
 
+  name: string = '';
+
 }

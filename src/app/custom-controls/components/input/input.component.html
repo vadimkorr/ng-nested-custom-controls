@@ -3,4 +3,8 @@
   [value]="value"
   [type]="type"
   [id]="id"
-  [placeholder]="placeholder">
+  [placeholder]="placeholder"
+
+  (change)="onChange($event)"
+  (keyup)="onKeyup($event)"
+  (blur)="onBlur($event)">
