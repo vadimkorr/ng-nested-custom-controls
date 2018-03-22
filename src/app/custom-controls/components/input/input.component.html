@@ -4,6 +4,7 @@
   [type]="type"
   [id]="id"
   [placeholder]="placeholder"
+  [ngClass]="{ 'show-validation-result': showValidationResult }"
 
   (change)="onChange($event)"
   (keyup)="onKeyup($event)"

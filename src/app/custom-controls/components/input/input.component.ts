@@ -31,6 +31,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() type: string;
   @Input() id: string;
   @Input() placeholder: string;
+  @Input() showValidationResult: boolean = false;
 
   @ViewChild('inputControl') private _inputControl: ElementRef;
 
