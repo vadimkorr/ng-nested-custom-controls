@@ -54,8 +54,7 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   onChange(event: any) {
-    this.value = event;
-    this._onChange(event);
+    this._onChange(event.target.value);
   }
   onKeyup(event: any) {
     this._onChange(event.target.value);

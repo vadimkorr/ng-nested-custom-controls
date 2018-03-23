@@ -1,101 +1,82 @@
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
-
-import { InputComponent } from './input.component';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ElementRef } from '@angular/core';
+import { ComponentFixture, TestBed, tick, async, fakeAsync } from '@angular/core/testing';
+import { CustomControlsModule } from '../../custom-controls.module';
+
+@Component({
+  template: `
+    <custom-input [placeholder]="placeholder" [type]="type" [id]="id" [(ngModel)]="name"></custom-input>
+  `
+})
+export class CustomInputTestComponent {
+  name: string = '';
+  placeholder: string = 'custom placeholder';
+  type: string = 'text';
+  id: string = 'custom_id';
+}
 
 fdescribe('InputComponent', () => {
-  let component: InputComponent;
-  let fixture: ComponentFixture<InputComponent>;
-  let rootInputEl: any;
+  let fixture: ComponentFixture<CustomInputTestComponent>;
+  let component: CustomInputTestComponent;
+  let inputElement: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        InputComponent
-      ],
-      imports: [
-        FormsModule
-      ]
+      declarations: [ CustomInputTestComponent ],
+      imports: [ FormsModule, CustomControlsModule ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InputComponent);
+    fixture = TestBed.createComponent(CustomInputTestComponent);
     component = fixture.componentInstance;
-    rootInputEl = component.getInputControl().nativeElement;
+    inputElement = fixture.nativeElement.querySelector('input');
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 
   describe('should change value passed as @Input()', () => {
     const testCases = [{
-      inputName: 'placeholder',
-      initialValue: 'initial placeholder',
-      newValue: 'new placeholder'
+      inputName: 'placeholder', initialValue: 'name', newValue: 'new name'
     }, {
-      inputName: 'type',
-      initialValue: 'text',
-      newValue: 'password'
+      inputName: 'type', initialValue: 'text', newValue: 'password'
     }, {
-      inputName: 'id',
-      initialValue: 'initial_id',
-      newValue: 'new_id'
+      inputName: 'id', initialValue: 'initial_id', newValue: 'new_id'
     }];
 
     testCases.map(tc => {
-      it(`for '${tc.inputName}' property`, () => {
+      it(`for '${tc.inputName}' property`, fakeAsync(() => {
         // Arrange
         const { inputName, initialValue, newValue } = tc;
-
         // Act
-        component[inputName] = initialValue;
-        fixture.detectChanges();
         component[inputName] = newValue;
+        tick();
         fixture.detectChanges();
-
         // Assert
-        expect(rootInputEl[inputName]).toEqual(newValue);
-      });
+        expect(inputElement[inputName]).toEqual(newValue);
+      }));
     });
-
   });
 
-  it('change via ngModel from model', fakeAsync(() => {
+  it('should change via ngModel from model', fakeAsync(() => {
     // Arrange
-    const newValue = 'new value';
-
+    const newName = 'User Name';
     // Act
-    component.value = newValue;
+    component.name = newName;
+    fixture.detectChanges();
     tick();
     fixture.detectChanges();
-
-    rootInputEl.dispatchEvent(new Event('input'));
-    tick();
-    fixture.detectChanges();
-
     // Assert
-    expect(rootInputEl.value).toEqual(newValue);
+    expect(inputElement.value).toEqual(newName);
   }));
 
-  it('change via ngModel from view', fakeAsync(() => {
+  it('should change via ngModel from view', fakeAsync(() => {
     // Arrange
-    const newValue = 'new value';
-
+    const newName = 'User Name';
     // Act
-    rootInputEl.value = newValue;
-    tick();
-    fixture.detectChanges();
-
-    rootInputEl.dispatchEvent(new Event('input'));
-    tick();
-    fixture.detectChanges();
-
+    inputElement.value = newName;
+    inputElement.dispatchEvent(new Event('change'));
     // Assert
-    expect(component.value).toEqual(newValue);
+    expect(component.name).toEqual(newName);
   }));
 });
