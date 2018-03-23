@@ -28,9 +28,9 @@ export class InputComponent implements ControlValueAccessor {
   ) { }
 
   value: string = '';
-  @Input() type: string;
+  @Input() type: string = 'text';
   @Input() id: string;
-  @Input() placeholder: string;
+  @Input() placeholder: string = '';
   @Input() showValidationResult: boolean = false;
 
   @ViewChild('inputControl') private _inputControl: ElementRef;
@@ -54,7 +54,8 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   onChange(event: any) {
-    this._onChange(event.target.value);
+    this.value = event;
+    this._onChange(event);
   }
   onKeyup(event: any) {
     this._onChange(event.target.value);
