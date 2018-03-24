@@ -18,7 +18,7 @@ export class CustomInputTestComponent {
 fdescribe('InputComponent', () => {
   let fixture: ComponentFixture<CustomInputTestComponent>;
   let component: CustomInputTestComponent;
-  let inputElement: HTMLElement;
+  let inputElement: any;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

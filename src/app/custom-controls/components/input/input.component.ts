@@ -31,10 +31,9 @@ export class InputComponent implements ControlValueAccessor {
   @Input() type: string = 'text';
   @Input() id: string;
   @Input() placeholder: string = '';
-  @Input() showValidationResult: boolean = false;
 
   @ViewChild('inputControl') private _inputControl: ElementRef;
-  getInputControl(): ElementRef {
+  get inputControl(): ElementRef {
     return this._inputControl;
   }
   private _onChange = (_: any) => {};
