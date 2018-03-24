@@ -1,7 +1,7 @@
 <h4>Original Design</h4>
 <form (ngSubmit)="submit()" [formGroup]="entityForm">
   <span>
-    <strong>control:</strong> custom-input;
+    <strong>control:</strong> input;
     <strong>value:</strong> {{entityForm.value.field1}};
     <strong>min-length:</strong> 2
   </span>
@@ -14,12 +14,12 @@
   </div>
 
   <span>
-    <strong>control:</strong> custom-labeled-input;
+    <strong>control:</strong> label + input;
     <strong>value:</strong> {{entityForm.value.field2}};
     <strong>min-length:</strong> 2
   </span>
   <div class="form-group">
-    <label for="field2-od">Field #2</label>
+    <label for="field2-od" class="required">Field #2</label>
     <input
       formControlName="field2"
       type="text"
@@ -28,7 +28,7 @@
   </div>
 
   <span>
-    <strong>control:</strong> custom-selectbox;
+    <strong>control:</strong> select;
     <strong>value:</strong> {{entityForm.value.field3}}
   </span>
   <div class="form-group">
@@ -43,7 +43,7 @@
   </div>
 
   <span>
-    <strong>control:</strong> custom-labeled-selectbox;
+    <strong>control:</strong> label + select;
     <strong>value:</strong> {{entityForm.value.field4}}
   </span>
   <div class="form-group">
