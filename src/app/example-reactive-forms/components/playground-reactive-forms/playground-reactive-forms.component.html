@@ -1,26 +1,55 @@
-<h2>Reactive Forms</h2>
-
-<form [formGroup]="userForm" (ngSubmit)="submit($event)">
-  <h3>custom-input</h3>
+<h4>Reactive Form</h4>
+<form (ngSubmit)="submit()" [formGroup]="entityForm">
+  <span>
+    <strong>control:</strong> custom-input;
+    <strong>value:</strong> {{entity.field1}};
+    <strong>min-length:</strong> 2
+  </span>
   <custom-input
-    formControlName="userName"
+    formControlName="field1"
+    [(ngModel)]="entity.field1"
     [type]="'text'"
-    [id]="'id1'"
-    [placeholder]="'type something'"
-    [showValidationResult]="true"></custom-input>
+    [id]="'field1-rf'"
+    [placeholder]="'Enter field1'"></custom-input>
 
-  <h3>custom-labeled-input</h3>
+  <span>
+    <strong>control:</strong> custom-labeled-input;
+    <strong>value:</strong> {{entity.field2}};
+    <strong>min-length:</strong> 2
+  </span>
   <custom-labeled-input
-    formControlName="lastName"
+    formControlName="field2"
+    [(ngModel)]="entity.field2"
     [type]="'text'"
-    [id]="'id2'"
-    [placeholder]="'type something'"
-
-    [label]="'Name'"
+    [id]="'field2-rf'"
+    [placeholder]="'Enter Field #2'"
+    [label]="'Field #2'"
     [isRequired]="true"></custom-labeled-input>
 
-  <button type="submit" class="btn btn-primary"
-    [disabled]="!userForm.valid">Submit</button>
+  <span>
+    <strong>control:</strong> custom-selectbox;
+    <strong>value:</strong> {{entity.field3}}
+  </span>
+  <custom-selectbox
+    formControlName="field3"
+    [(ngModel)]="entity.field3"
+    [id]="'field3-rf'"
+    [collection]="types"></custom-selectbox>
 
+  <span>
+    <strong>control:</strong> custom-labeled-selectbox;
+    <strong>value:</strong> {{entity.field4}}
+  </span>
+  <custom-labeled-selectbox
+    formControlName="field4"
+    [(ngModel)]="entity.field4"
+    [label]="'Field #4'"
+    [isRequired]="true"
+    [id]="'field4-rf'"
+    [collection]="types"></custom-labeled-selectbox>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="!entityForm.valid">Submit</button>
 </form>
-

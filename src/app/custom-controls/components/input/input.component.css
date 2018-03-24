@@ -11,7 +11,7 @@ input {
   width: 100%;
 }
 
-:host.ng-invalid.ng-touched input.show-validation-result,
+:host.ng-invalid.ng-touched input,
 :host-context(.ng-invalid.ng-touched > .catch-validation-events) input {
   -webkit-transition: background-color 150ms ease-in-out;
   -moz-transition: background-color 150ms ease-in-out;

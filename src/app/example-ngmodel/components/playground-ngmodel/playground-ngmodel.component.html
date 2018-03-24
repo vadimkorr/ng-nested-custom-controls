@@ -1,25 +1,62 @@
-<h2>ngModel</h2>
-
-<div class="form">
-  <h3>custom-input</h3>
+<h4>Template-driven Form (ngModel)</h4>
+<form (ngSubmit)="submit()" #entityForm="ngForm">
+  <span>
+    <strong>control:</strong> custom-input;
+    <strong>value:</strong> {{entity.field1}};
+    <strong>min-length:</strong> 2
+  </span>
   <custom-input
-    [(ngModel)]="name"
+    name="field1"
     required
+    minlength="2"
+    [(ngModel)]="entity.field1"
     [type]="'text'"
-    [id]="'ngmodel-name'"
-    [placeholder]="'Enter Name'"
+    [id]="'field1'"
+    [placeholder]="'Enter field1'"
     [showValidationResult]="false"></custom-input>
-  Name: {{name}}
 
-  <h3>custom-labeled-input</h3>
+  <span>
+    <strong>control:</strong> custom-labeled-input;
+    <strong>value:</strong> {{entity.field2}};
+    <strong>min-length:</strong> 2
+  </span>
   <custom-labeled-input
-    [(ngModel)]="lastName"
+    name="field2"
     required
+    minlength="2"
+    [(ngModel)]="entity.field2"
     [type]="'text'"
-    [id]="'ngmodel-lastname'"
-    [placeholder]="'Enter Last Name'"
-    [label]="'Name'"
+    [id]="'field2'"
+    [placeholder]="'Enter Field #2'"
+    [label]="'Field #2'"
     [isRequired]="true"></custom-labeled-input>
-  Last Name: {{lastName}}
-</div>
 
+  <span>
+    <strong>control:</strong> custom-selectbox;
+    <strong>value:</strong> {{entity.field3}}
+  </span>
+  <custom-selectbox
+    name="field3"
+    required
+    [(ngModel)]="entity.field3"
+    [id]="'field3'"
+    [collection]="types"></custom-selectbox>
+
+  <span>
+    <strong>control:</strong> custom-labeled-selectbox;
+    <strong>value:</strong> {{entity.field4}}
+  </span>
+  <custom-labeled-selectbox
+    name="field4"
+    required
+    [(ngModel)]="entity.field4"
+    [label]="'Field #4'"
+    [isRequired]="true"
+    [id]="'field4'"
+    [collection]="types"></custom-labeled-selectbox>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="!entityForm.form.valid">Submit</button>
+</form>
