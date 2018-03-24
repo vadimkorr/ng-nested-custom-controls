@@ -1,0 +1,12 @@
+<div class="select">
+  <select
+    #selectControl
+    [id]="id"
+    [(ngModel)]="value"
+
+    (change)="onChange($event)"
+    (blur)="onBlur($event)">
+    <option disabled selected value=null> -- select an option -- </option>
+    <option *ngFor="let item of collection" [value]="getValue(item)">{{getLabel(item)}}</option>
+  </select>
+</div>

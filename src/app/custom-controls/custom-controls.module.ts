@@ -5,6 +5,7 @@ import { InputComponent } from './components/input/input.component';
 import { LabeledControlComponent } from './components/labeled-control/labeled-control.component';
 import { LabeledInputComponent } from './components/labeled-input/labeled-input.component';
 import { FormsModule } from '@angular/forms';
+import { SelectboxComponent } from './components/selectbox/selectbox.component';
 
 @NgModule({
   imports: [
@@ -14,11 +15,13 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     InputComponent,
     LabeledControlComponent,
-    LabeledInputComponent
+    LabeledInputComponent,
+    SelectboxComponent,
   ],
   exports: [
     InputComponent,
-    LabeledInputComponent
+    LabeledInputComponent,
+    SelectboxComponent,
   ]
 })
 export class CustomControlsModule { }
