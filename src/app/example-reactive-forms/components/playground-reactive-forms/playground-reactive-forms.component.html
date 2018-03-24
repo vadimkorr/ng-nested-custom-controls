@@ -2,24 +2,22 @@
 <form (ngSubmit)="submit()" [formGroup]="entityForm">
   <span>
     <strong>control:</strong> custom-input;
-    <strong>value:</strong> {{entity.field1}};
+    <strong>value:</strong> {{entityForm.value.field1}};
     <strong>min-length:</strong> 2
   </span>
   <custom-input
     formControlName="field1"
-    [(ngModel)]="entity.field1"
     [type]="'text'"
     [id]="'field1-rf'"
     [placeholder]="'Enter field1'"></custom-input>
 
   <span>
     <strong>control:</strong> custom-labeled-input;
-    <strong>value:</strong> {{entity.field2}};
+    <strong>value:</strong> {{entityForm.value.field2}};
     <strong>min-length:</strong> 2
   </span>
   <custom-labeled-input
     formControlName="field2"
-    [(ngModel)]="entity.field2"
     [type]="'text'"
     [id]="'field2-rf'"
     [placeholder]="'Enter Field #2'"
@@ -28,21 +26,19 @@
 
   <span>
     <strong>control:</strong> custom-selectbox;
-    <strong>value:</strong> {{entity.field3}}
+    <strong>value:</strong> {{entityForm.value.field3}}
   </span>
   <custom-selectbox
     formControlName="field3"
-    [(ngModel)]="entity.field3"
     [id]="'field3-rf'"
     [collection]="types"></custom-selectbox>
 
   <span>
     <strong>control:</strong> custom-labeled-selectbox;
-    <strong>value:</strong> {{entity.field4}}
+    <strong>value:</strong> {{entityForm.value.field4}}
   </span>
   <custom-labeled-selectbox
     formControlName="field4"
-    [(ngModel)]="entity.field4"
     [label]="'Field #4'"
     [isRequired]="true"
     [id]="'field4-rf'"
