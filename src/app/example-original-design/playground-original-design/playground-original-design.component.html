@@ -1,0 +1,65 @@
+<h4>Original Design</h4>
+<form (ngSubmit)="submit()" [formGroup]="entityForm">
+  <span>
+    <strong>control:</strong> custom-input;
+    <strong>value:</strong> {{entityForm.value.field1}};
+    <strong>min-length:</strong> 2
+  </span>
+  <div class="form-group">
+    <input
+      formControlName="field1"
+      type="text"
+      id="field1-od"
+      placeholder="Enter Field #1">
+  </div>
+
+  <span>
+    <strong>control:</strong> custom-labeled-input;
+    <strong>value:</strong> {{entityForm.value.field2}};
+    <strong>min-length:</strong> 2
+  </span>
+  <div class="form-group">
+    <label for="field2-od">Field #2</label>
+    <input
+      formControlName="field2"
+      type="text"
+      id="field2-od"
+      placeholder="Enter Field #2">
+  </div>
+
+  <span>
+    <strong>control:</strong> custom-selectbox;
+    <strong>value:</strong> {{entityForm.value.field3}}
+  </span>
+  <div class="form-group">
+    <div class="select">
+      <select
+        formControlName="field3"
+        id="field3-od">
+        <option disabled selected value=null> -- select an option -- </option>
+        <option *ngFor="let item of types" [value]="item">{{item}}</option>
+      </select>
+    </div>
+  </div>
+
+  <span>
+    <strong>control:</strong> custom-labeled-selectbox;
+    <strong>value:</strong> {{entityForm.value.field4}}
+  </span>
+  <div class="form-group">
+    <label for="field4-od" class="required">Field #4</label>
+    <div class="select">
+      <select
+        formControlName="field4"
+        id="field4-od">
+        <option disabled selected value=null> -- select an option -- </option>
+        <option *ngFor="let item of types" [value]="item">{{item}}</option>
+      </select>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="!entityForm.valid">Submit</button>
+</form>

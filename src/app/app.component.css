@@ -2,29 +2,21 @@
 :host {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
+  background-color: lightseagreen;
 }
 
 :host > * {
   display: flex;
+  min-height: 100%;
 }
 
-.playground > * {
-  flex: 2;
-  flex-direction: row;
-}
-
-.original-controls-container {
+.original-container{
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: lightsteelblue;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 }
 
-.original-controls-container > * {
-
+.original-container > * {
+  flex: 0.5;
 }
