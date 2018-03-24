@@ -2,7 +2,7 @@
 :host {
   display: flex;
   flex-direction: column;
-  background-color: lightseagreen;
+  background-color: mediumseagreen;
 }
 
 :host > * {
