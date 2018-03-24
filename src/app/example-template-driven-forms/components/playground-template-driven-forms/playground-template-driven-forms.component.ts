@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'custom-playground-ngmodel',
-  templateUrl: './playground-ngmodel.component.html',
-  styleUrls: ['./playground-ngmodel.component.css']
+  selector: 'custom-playground-template-driven-forms',
+  templateUrl: './playground-template-driven-forms.component.html',
+  styleUrls: ['./playground-template-driven-forms.component.css']
 })
 
-export class PlaygroundNgmodelComponent {
+export class PlaygroundTemplateDrivenFormsComponent {
 
   entity = {
     field1: 'field #1',

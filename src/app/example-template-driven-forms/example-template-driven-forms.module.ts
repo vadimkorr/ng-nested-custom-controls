@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { PlaygroundNgmodelComponent } from './components/playground-ngmodel/playground-ngmodel.component';
+import { PlaygroundTemplateDrivenFormsComponent } from './components/playground-template-driven-forms/playground-template-driven-forms.component';
 import { CustomControlsModule } from '../custom-controls/custom-controls.module';
 
 @NgModule({
@@ -12,10 +12,10 @@ import { CustomControlsModule } from '../custom-controls/custom-controls.module'
     FormsModule
   ],
   declarations: [
-    PlaygroundNgmodelComponent
+    PlaygroundTemplateDrivenFormsComponent
   ],
   exports: [
-    PlaygroundNgmodelComponent
+    PlaygroundTemplateDrivenFormsComponent
   ]
 })
-export class ExampleNgmodelModule { }
+export class ExampleTemplateDrivenFormsModule { }

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { ClarityModule } from '@clr/angular';
 
 import { AppComponent } from './app.component';
-import { ExampleNgmodelModule } from './example-ngmodel/example-ngmodel.module';
+import { ExampleTemplateDrivenFormsModule } from './example-template-driven-forms/example-template-driven-forms.module';
 import { ExampleReactiveFormsModule } from './example-reactive-forms/example-reactive-forms.module';
 import { ExampleOriginalDesignModule } from './example-original-design/example-original-design.module';
 
@@ -16,7 +16,7 @@ import { ExampleOriginalDesignModule } from './example-original-design/example-o
   imports: [
     BrowserModule,
     ClarityModule,
-    ExampleNgmodelModule,
+    ExampleTemplateDrivenFormsModule,
     ExampleReactiveFormsModule,
     ExampleOriginalDesignModule
   ],
