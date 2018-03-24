@@ -39,7 +39,7 @@ export class PlaygroundOriginalDesignComponent {
   }];
 
   submit() {
-    alert(`Submitted succesfully!\n${JSON.stringify(this.entity, null, 2)}`);
+    alert(`Submitted succesfully!\n${JSON.stringify(this.entityForm.value, null, 2)}`);
   }
 
 }
