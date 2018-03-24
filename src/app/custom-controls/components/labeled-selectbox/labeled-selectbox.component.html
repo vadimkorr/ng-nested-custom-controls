@@ -1,0 +1,16 @@
+<!-- Add catch-validation-events to make child nd-input react on validation errors -->
+
+<custom-labeled-control
+  class="catch-validation-events"
+  [label]="label"
+  [id]="id"
+  [isRequired]="isRequired">
+
+  <custom-selectbox
+    #selectbox
+    [id]="id"
+    [(ngModel)]="value"
+    [valueField]="valueField"
+    [labelField]="labelField"
+    [collection]="collection"></custom-selectbox>
+</custom-labeled-control>
