@@ -24,9 +24,9 @@ export class SelectboxComponent implements ControlValueAccessor {
   @Input() collection: any[] = [];
   @Output() change = new EventEmitter<any>();
 
-  @ViewChild('selectControl') private _selectControl: ElementRef;
-  get selectControl(): ElementRef {
-    return this._selectControl;
+  @ViewChild('selectElement') private _selectElement: ElementRef;
+  get selectElement(): ElementRef {
+    return this._selectElement;
   }
   private _onChange = (_: any) => {};
   private _onTouched = () => {};
@@ -41,7 +41,7 @@ export class SelectboxComponent implements ControlValueAccessor {
     this._onTouched = fn;
   }
   setDisabledState?(isDisabled: boolean): void {
-    this._renderer.setProperty(this._selectControl.nativeElement, 'disabled', isDisabled);
+    this._renderer.setProperty(this._selectElement.nativeElement, 'disabled', isDisabled);
   }
 
   onChange(event: any) {

@@ -47,10 +47,10 @@ export class LabeledSelectboxComponent
 
   ngOnInit() {
     const self = this;
-    this._selectbox.selectControl.nativeElement.addEventListener('change', function(event) {
+    this._selectbox.selectElement.nativeElement.addEventListener('change', function(event) {
       self._onChange(this.value);
     });
-    this._selectbox.selectControl.nativeElement.addEventListener('blur', function(event) {
+    this._selectbox.selectElement.nativeElement.addEventListener('blur', function(event) {
       self._onTouched();
     });
   }

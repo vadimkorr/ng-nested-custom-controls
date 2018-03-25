@@ -32,9 +32,9 @@ export class InputComponent implements ControlValueAccessor {
   @Input() id: string;
   @Input() placeholder: string = '';
 
-  @ViewChild('inputControl') private _inputControl: ElementRef;
-  get inputControl(): ElementRef {
-    return this._inputControl;
+  @ViewChild('inputElement') private _inputElement: ElementRef;
+  get inputElement(): ElementRef {
+    return this._inputElement;
   }
   private _onChange = (_: any) => {};
   private _onTouched = () => {};
@@ -49,7 +49,7 @@ export class InputComponent implements ControlValueAccessor {
     this._onTouched = fn;
   }
   setDisabledState?(isDisabled: boolean): void {
-    this._renderer.setProperty(this._inputControl.nativeElement, 'disabled', isDisabled);
+    this._renderer.setProperty(this._inputElement.nativeElement, 'disabled', isDisabled);
   }
 
   onChange(event: any) {

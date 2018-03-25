@@ -50,13 +50,13 @@ export class LabeledInputComponent implements
 
   ngOnInit() {
     const self = this;
-    this._input.inputControl.nativeElement.addEventListener('change', function(event) {
+    this._input.inputElement.nativeElement.addEventListener('change', function(event) {
       self._onChange(this.value);
     });
-    this._input.inputControl.nativeElement.addEventListener('keyup', function(event) {
+    this._input.inputElement.nativeElement.addEventListener('keyup', function(event) {
       self._onChange(this.value);
     });
-    this._input.inputControl.nativeElement.addEventListener('blur', function(event) {
+    this._input.inputElement.nativeElement.addEventListener('blur', function(event) {
       self._onTouched();
     });
   }
