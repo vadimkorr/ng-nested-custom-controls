@@ -1,0 +1,21 @@
+:host {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+input {
+  background-color: inherit;
+  border: 1px solid #9a9a9a;
+  height: 30px !important;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+:host.ng-invalid.ng-touched input,
+:host-context(.ng-invalid.ng-touched > .catch-validation-events) input {
+  -webkit-transition: background-color 150ms ease-in-out;
+  -moz-transition: background-color 150ms ease-in-out;
+  -ms-transition: background-color 150ms ease-in-out;
+  -o-transition: background-color 150ms ease-in-out;
+  background-color: rgba(255, 0, 0, 0.3);
+}

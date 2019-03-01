@@ -1,51 +1,52 @@
 <h4>Reactive Form</h4>
 <form (ngSubmit)="submit()" [formGroup]="entityForm">
   <span>
-    <strong>control:</strong> custom-input;
-    <strong>value:</strong> {{entityForm.value.field1}};
-    <strong>min-length:</strong> 2
+    <strong>control:</strong> ui-custom-input; <strong>value:</strong>
+    {{ entityForm.value.field1 }}; <strong>min-length:</strong> 2
   </span>
-  <custom-input
+  <ui-custom-input
     formControlName="field1"
     [type]="'text'"
     [id]="'field1-rf'"
-    [placeholder]="'Enter field1'"></custom-input>
+    [placeholder]="'Enter field1'"
+  ></ui-custom-input>
 
   <span>
-    <strong>control:</strong> custom-labeled-input;
-    <strong>value:</strong> {{entityForm.value.field2}};
-    <strong>min-length:</strong> 2
+    <strong>control:</strong> ui-custom-labeled-input; <strong>value:</strong>
+    {{ entityForm.value.field2 }}; <strong>min-length:</strong> 2
   </span>
-  <custom-labeled-input
+  <ui-custom-labeled-input
     formControlName="field2"
     [type]="'text'"
     [id]="'field2-rf'"
     [placeholder]="'Enter Field #2'"
     [label]="'Field #2'"
-    [isRequired]="true"></custom-labeled-input>
+    [isRequired]="true"
+  ></ui-custom-labeled-input>
 
   <span>
-    <strong>control:</strong> custom-selectbox;
-    <strong>value:</strong> {{entityForm.value.field3}}
+    <strong>control:</strong> custom-selectbox; <strong>value:</strong>
+    {{ entityForm.value.field3 }}
   </span>
   <custom-selectbox
     formControlName="field3"
     [id]="'field3-rf'"
-    [collection]="types"></custom-selectbox>
+    [collection]="types"
+  ></custom-selectbox>
 
   <span>
-    <strong>control:</strong> custom-labeled-selectbox;
-    <strong>value:</strong> {{entityForm.value.field4}}
+    <strong>control:</strong> custom-labeled-selectbox; <strong>value:</strong>
+    {{ entityForm.value.field4 }}
   </span>
   <custom-labeled-selectbox
     formControlName="field4"
     [label]="'Field #4'"
     [isRequired]="true"
     [id]="'field4-rf'"
-    [collection]="types"></custom-labeled-selectbox>
+    [collection]="types"
+  ></custom-labeled-selectbox>
 
-  <button
-    type="submit"
-    class="btn btn-primary"
-    [disabled]="!entityForm.valid">Submit</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!entityForm.valid">
+    Submit
+  </button>
 </form>
