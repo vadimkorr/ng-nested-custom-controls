@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'ui-custom-labeled',
+  selector: 'lib-custom-labeled',
   templateUrl: './labeled.component.html',
   styleUrls: ['./labeled.component.css']
 })

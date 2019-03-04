@@ -3,7 +3,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { InputComponent } from '../input/input.component';
 
 @Component({
-  selector: 'ui-custom-labeled-input',
+  selector: 'lib-custom-labeled-input',
   templateUrl: './labeled-input.component.html',
   styleUrls: ['./labeled-input.component.css'],
   providers: [

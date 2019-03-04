@@ -1,16 +1,16 @@
 <!-- Add catch-validation-events to make child nd-input react on validation errors -->
 
-<ui-custom-labeled
+<lib-custom-labeled
   class="catch-validation-events"
   [label]="label"
   [id]="id"
   [isRequired]="isRequired"
 >
-  <ui-custom-input
+  <lib-custom-input
     #input
     [(ngModel)]="value"
     [type]="type"
     [id]="id"
     [placeholder]="placeholder"
-  ></ui-custom-input>
-</ui-custom-labeled>
+  ></lib-custom-input>
+</lib-custom-labeled>

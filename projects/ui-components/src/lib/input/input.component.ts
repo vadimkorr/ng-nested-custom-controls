@@ -9,7 +9,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'ui-custom-input',
+  selector: 'lib-custom-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css'],
   providers: [

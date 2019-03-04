@@ -4,25 +4,25 @@
     <strong>control:</strong> ui-custom-input; <strong>value:</strong>
     {{ entityForm.value.field1 }}; <strong>min-length:</strong> 2
   </span>
-  <ui-custom-input
+  <lib-custom-input
     formControlName="field1"
     [type]="'text'"
     [id]="'field1-rf'"
     [placeholder]="'Enter field1'"
-  ></ui-custom-input>
+  ></lib-custom-input>
 
   <span>
     <strong>control:</strong> ui-custom-labeled-input; <strong>value:</strong>
     {{ entityForm.value.field2 }}; <strong>min-length:</strong> 2
   </span>
-  <ui-custom-labeled-input
+  <lib-custom-labeled-input
     formControlName="field2"
     [type]="'text'"
     [id]="'field2-rf'"
     [placeholder]="'Enter Field #2'"
     [label]="'Field #2'"
     [isRequired]="true"
-  ></ui-custom-labeled-input>
+  ></lib-custom-labeled-input>
 
   <span>
     <strong>control:</strong> custom-selectbox; <strong>value:</strong>
